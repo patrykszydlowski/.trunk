@@ -2,12 +2,20 @@
 	"name": "trunk",
 	"image": "mcr.microsoft.com/devcontainers/base:1.0.9",
 	"remoteUser": "root",
+	"mounts": [{ "source": "trunk-cache", "target": "/root/.cache/trunk", "type": "volume" }],
+	"updateContentCommand": {
+		"trunk": "trunk install"
+	},
 	"features": {
-		"ghcr.io/devcontainers/features/common-utils": {}
+		"ghcr.io/devcontainers/features/common-utils": {},
+		"ghcr.io/trunk-io/devcontainer-feature/trunk": {}
 	},
 	"customizations": {
 		"vscode": {
-			"extensions": ["editorconfig.editorconfig"]
+			"extensions": ["editorconfig.editorconfig", "redhat.vscode-yaml"],
+			"settings": {
+				"editor.defaultFormatter": "trunk.io"
+			}
 		}
 	}
 }

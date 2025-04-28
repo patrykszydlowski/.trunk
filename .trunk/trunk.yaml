@@ -1,0 +1,26 @@
+# yaml-language-server: $schema=https://static.trunk.io/pub/trunk-yaml-schema.json
+
+version: 0.1
+
+cli:
+  version: 1.22.12
+
+plugins:
+  sources:
+    - id: trunk
+      ref: v1.6.8
+      uri: https://github.com/trunk-io/plugins
+
+actions:
+  enabled:
+    - trunk-announce
+    - trunk-check-pre-commit
+    - trunk-check-pre-push
+    - trunk-fmt-pre-commit
+    - trunk-upgrade-available
+
+runtimes:
+  enabled:
+    - go@1.21.0
+    - node@18.20.5
+    - python@3.10.8

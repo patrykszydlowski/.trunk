@@ -21,6 +21,10 @@ actions:
     - trunk-fmt-pre-commit
     - trunk-upgrade-available
 
+lint:
+  enabled:
+    - editorconfig-checker@3.2.0
+
 runtimes:
   enabled:
     - go@1.21.0

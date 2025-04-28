@@ -1,0 +1,33 @@
+# yaml-language-server: $schema=https://static.trunk.io/pub/trunk-yaml-schema.json
+
+version: 0.1
+
+lint:
+  definitions:
+    - name: editorconfig-checker
+      files:
+        - ALL
+      tools:
+        - editorconfig-checker
+      commands:
+        - name: lint
+          run: editorconfig-checker -no-color -format=codeclimate ${target}
+          idempotent: true
+          output: lsp_json
+          parser:
+            runtime: python
+            run: ${plugin}/linters/editorconfig-checker/parser.py
+          success_codes:
+            - 0
+            - 1
+      direct_configs:
+        - .editorconfig
+
+tools:
+  definitions:
+    - name: editorconfig-checker
+      runtime: go
+      package: github.com/editorconfig-checker/editorconfig-checker/v3/cmd/editorconfig-checker
+      known_good_version: 3.2.0
+      shims:
+        - editorconfig-checker

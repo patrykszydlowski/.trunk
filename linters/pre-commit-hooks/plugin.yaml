@@ -1,0 +1,28 @@
+# yaml-language-server: $schema=https://static.trunk.io/pub/trunk-yaml-schema.json
+
+version: 0.1
+
+lint:
+  definitions:
+    - name: pre-commit-hooks
+      commands:
+        - name: end-of-file-fixer
+          enabled: true
+        - name: check-added-large-files
+          enabled: true
+        - name: check-case-conflict
+          enabled: true
+        - name: check-merge-conflict
+          enabled: true
+        - name: check-shebang-scripts-are-executable
+          enabled: true
+        - name: check-symlinks
+          enabled: true
+        - name: check-vcs-permalinks
+          enabled: true
+        - name: destroyed-symlinks
+          enabled: true
+        - name: detect-private-key
+          enabled: true
+        - name: trailing-whitespace
+          enabled: true

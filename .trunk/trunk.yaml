@@ -10,6 +10,8 @@ plugins:
     - id: trunk
       ref: v1.6.8
       uri: https://github.com/trunk-io/plugins
+    - id: local
+      local: .
 
 actions:
   enabled:

@@ -1,0 +1,13 @@
+{
+	"name": "trunk",
+	"image": "mcr.microsoft.com/devcontainers/base:1.0.9",
+	"remoteUser": "root",
+	"features": {
+		"ghcr.io/devcontainers/features/common-utils": {}
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": ["editorconfig.editorconfig"]
+		}
+	}
+}
